@@ -85,6 +85,7 @@ def file_to_civis(buf, name, api_key=None, client=None, **kwargs):
                                      headers={'Content-Type': en.content_type})
     else:
         response = requests.post(url, files=form_key)
+    print(response.headers)
     response.raise_for_status()
 
     return file_response.id
